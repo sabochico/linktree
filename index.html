@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiyay | Digital Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
+      margin-bottom: 0.2em;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid #ff0080;
+      margin-bottom: 0.5em;
+    }
+
+    p.slogan {
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff;
+      margin-bottom: 2em;
+    }
+
+    .link-button {
+      display: block;
+      width: 80%;
+      max-width: 400px;
+      padding: 1em;
+      margin: 0.5em auto;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      border: 2px solid #ff0080;
+      border-radius: 8px;
+      background: rgba(255, 0, 128, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .link-button:hover {
+      background: rgba(255, 0, 128, 0.3);
+      box-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080;
+    }
+
+    .donate-glow {
+      border-color: #00ffff;
+      box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+
+    .glow {
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; }
+      to { text-shadow: 0 0 20px #ff0080, 0 0 30px #ff0080; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="background"></canvas>
+  <img src="https://via.placeholder.com/100x100.png?text=J" alt="logo" class="logo">
+  <h1 class="glow">Jiyay</h1>
+  <p class="slogan">Stream. Create. Connect.</p>
+
+  <a class="link-button" href="https://www.tiktok.com/@jiyayjt?lang=en" target="_blank">TikTok</a>
+  <a class="link-button" href="https://www.instagram.com/jiyayjt/" target="_blank">Instagram</a>
+  <a class="link-button" href="https://kick.com/jiyay" target="_blank">Kick</a>
+  <a class="link-button" href="http://youtube.com/jiyay" target="_blank">YouTube</a>
+  <a class="link-button" href="https://www.amazon.com/hz/wishlist/ls/9KYEOINOQDQI?ref_=wl_dp_view_your_list" target="_blank">Amazon Wishlist</a>
+  <a class="link-button" href="https://discord.com/invite/qHJpEfQzCQ" target="_blank">Discord</a>
+  <a class="link-button donate-glow" href="https://www.paypal.com/paypalme/aweco" target="_blank">PayPal</a>
+  <a class="link-button donate-glow" href="https://ko-fi.com/jiyay" target="_blank">Ko-fi</a>
+
+  <script>
+    const canvas = document.getElementById('background');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = Array.from({length: 100}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 2,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#ff0080';
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if(p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if(p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
