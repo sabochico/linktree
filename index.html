@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jiyay | Digital Card</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -82,10 +83,10 @@
       animation: buttonFade 1s forwards;
     }
 
-    .link-button img {
-      width: 20px;
-      height: 20px;
-      filter: brightness(0) invert(1) drop-shadow(0 0 5px #ff0080);
+    .link-button i {
+      font-size: 1.2em;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff;
     }
 
     .link-button:hover {
@@ -120,11 +121,6 @@
     @keyframes buttonFade {
       to {opacity: 1; transform: translateY(0);}
     }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2em; }
-      .link-button { padding: 0.8em; }
-    }
   </style>
 </head>
 <body>
@@ -134,14 +130,14 @@
     <h1>Jiyay</h1>
     <p class="slogan">Stream. Create. Connect.</p>
 
-    <a class="link-button" href="#"><img src="pixel_tiktok.png" alt="TikTok"> TikTok</a>
-    <a class="link-button" href="#"><img src="pixel_instagram.png" alt="Instagram"> Instagram</a>
-    <a class="link-button" href="#"><img src="pixel_kick.png" alt="Kick"> Kick</a>
-    <a class="link-button" href="#"><img src="pixel_youtube.png" alt="YouTube"> YouTube</a>
-    <a class="link-button" href="#"><img src="pixel_amazon.png" alt="Amazon Wishlist"> Amazon Wishlist</a>
-    <a class="link-button" href="#"><img src="pixel_discord.png" alt="Discord"> Discord</a>
-    <a class="link-button donate-glow" href="#"><img src="pixel_paypal.png" alt="PayPal"> PayPal</a>
-    <a class="link-button donate-glow" href="#"><img src="pixel_kofi.png" alt="Ko-fi"> Ko-fi</a>
+    <a class="link-button" href="#"><i class="fab fa-tiktok"></i> TikTok</a>
+    <a class="link-button" href="#"><i class="fab fa-instagram"></i> Instagram</a>
+    <a class="link-button" href="#"><i class="fas fa-gamepad"></i> Kick</a>
+    <a class="link-button" href="#"><i class="fab fa-youtube"></i> YouTube</a>
+    <a class="link-button" href="#"><i class="fas fa-gift"></i> Amazon Wishlist</a>
+    <a class="link-button" href="#"><i class="fab fa-discord"></i> Discord</a>
+    <a class="link-button donate-glow" href="#"><i class="fab fa-paypal"></i> PayPal</a>
+    <a class="link-button donate-glow" href="#"><i class="fas fa-coffee"></i> Ko-fi</a>
   </div>
 
   <script>
