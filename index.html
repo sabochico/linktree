@@ -61,7 +61,10 @@
     }
 
     .link-button {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       width: 100%;
       max-width: 400px;
       padding: 1em;
@@ -74,7 +77,12 @@
       background: rgba(255, 0, 128, 0.1);
       transition: all 0.3s ease;
       position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: buttonFade 1s forwards;
     }
+
+    .link-button:nth-child(n+4) { animation-delay: calc(0.2s * (n - 3)); }
 
     .link-button:hover {
       transform: scale(1.05);
@@ -104,6 +112,15 @@
       from {opacity: 0; transform: translateY(20px);}
       to {opacity: 1; transform: translateY(0);}
     }
+
+    @keyframes buttonFade {
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      .link-button { padding: 0.8em; }
+    }
   </style>
 </head>
 <body>
@@ -113,14 +130,14 @@
     <h1>Jiyay</h1>
     <p class="slogan">Stream. Create. Connect.</p>
 
-    <a class="link-button" href="https://www.tiktok.com/@jiyayjt?lang=en" target="_blank">TikTok</a>
-    <a class="link-button" href="https://www.instagram.com/jiyayjt/" target="_blank">Instagram</a>
-    <a class="link-button" href="https://kick.com/jiyay" target="_blank">Kick</a>
-    <a class="link-button" href="http://youtube.com/jiyay" target="_blank">YouTube</a>
-    <a class="link-button" href="https://www.amazon.com/hz/wishlist/ls/9KYEOINOQDQI?ref_=wl_dp_view_your_list" target="_blank">Amazon Wishlist</a>
-    <a class="link-button" href="https://discord.com/invite/qHJpEfQzCQ" target="_blank">Discord</a>
-    <a class="link-button donate-glow" href="https://www.paypal.com/paypalme/aweco" target="_blank">PayPal</a>
-    <a class="link-button donate-glow" href="https://ko-fi.com/jiyay" target="_blank">Ko-fi</a>
+    <a class="link-button" href="https://www.tiktok.com/@jiyayjt?lang=en" target="_blank">🎵 TikTok</a>
+    <a class="link-button" href="https://www.instagram.com/jiyayjt/" target="_blank">📷 Instagram</a>
+    <a class="link-button" href="https://kick.com/jiyay" target="_blank">🎮 Kick</a>
+    <a class="link-button" href="http://youtube.com/jiyay" target="_blank">▶️ YouTube</a>
+    <a class="link-button" href="https://www.amazon.com/hz/wishlist/ls/9KYEOINOQDQI?ref_=wl_dp_view_your_list" target="_blank">🎁 Amazon Wishlist</a>
+    <a class="link-button" href="https://discord.com/invite/qHJpEfQzCQ" target="_blank">💬 Discord</a>
+    <a class="link-button donate-glow" href="https://www.paypal.com/paypalme/aweco" target="_blank">💸 PayPal</a>
+    <a class="link-button donate-glow" href="https://ko-fi.com/jiyay" target="_blank">☕ Ko-fi</a>
   </div>
 
   <script>
@@ -133,8 +150,8 @@
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       radius: Math.random() * 2 + 1,
-      dx: (Math.random() - 0.5) * 0.5,
-      dy: (Math.random() - 0.5) * 0.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
       color: `hsl(${Math.random() * 360}, 100%, 60%)`
     }));
 
