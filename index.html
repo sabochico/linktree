@@ -2,146 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jiyay | Digital Card</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiyay | Anime Card</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      min-height: 200vh;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      animation: rotate 60s linear infinite;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 50px 20px;
-      max-width: 600px;
-      margin: auto;
-      backdrop-filter: blur(10px);
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 12px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
-      margin-bottom: 0.2em;
-    }
-
-    .link-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      max-width: 400px;
-      padding: 1em;
-      margin: 1em auto;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      border: 2px solid;
-      border-image: linear-gradient(45deg, #ff0080, #00ffff) 1;
-      border-radius: 8px;
-      background: rgba(255, 0, 128, 0.1);
-      transition: all 0.3s ease;
+      padding: 0;
+      background: url('A_digital_illustration_webpage_features_a_young_fe.png') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      font-family: sans-serif;
       position: relative;
     }
-
-    .link-button i {
-      font-size: 1.2em;
-      color: #00ffff;
-      text-shadow: 0 0 5px #00ffff;
+    .button {
+      position: absolute;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      text-decoration: none;
+      border: 1px solid white;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+      transition: transform 0.2s ease;
     }
-
-    .link-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #00ffff;
-    }
-
-    .footer {
-      position: fixed;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.8em;
-      color: #666;
-    }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .button:hover {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
 <body>
-  <canvas id="background"></canvas>
-  <div class="container">
-    <img src="https://via.placeholder.com/100x100.png?text=J" alt="logo" class="logo">
-    <h1>Jiyay</h1>
-    <p class="slogan">Stream. Create. Connect.</p>
 
-    <a class="link-button" href="https://www.tiktok.com/@jiyayjt?lang=en" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-    <a class="link-button" href="https://www.instagram.com/jiyayjt/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-    <a class="link-button" href="https://kick.com/jiyay" target="_blank"><i class="fas fa-gamepad"></i> Kick</a>
-    <a class="link-button" href="http://youtube.com/jiyay" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-    <a class="link-button" href="https://www.amazon.com/hz/wishlist/ls/9KYEOINOQDQI?ref_=wl_dp_view_your_list" target="_blank"><i class="fas fa-gift"></i> Amazon Wishlist</a>
-    <a class="link-button" href="https://discord.com/invite/qHJpEfQzCQ" target="_blank"><i class="fab fa-discord"></i> Discord</a>
-    <a class="link-button donate-glow" href="https://www.paypal.com/paypalme/aweco" target="_blank"><i class="fab fa-paypal"></i> PayPal</a>
-    <a class="link-button donate-glow" href="https://ko-fi.com/jiyay" target="_blank"><i class="fas fa-coffee"></i> Ko-fi</a>
-  </div>
-  <div class="footer">© 2025 Jiyay | All Rights Reserved</div>
+  <!-- Left Column Buttons -->
+  <a href="https://www.tiktok.com/@jiyayjt?lang=en" class="button" style="top: 65%; left: 20%;">TikTok</a>
+  <a href="https://www.instagram.com/jiyayjt/" class="button" style="top: 70%; left: 20%;">Instagram</a>
+  <a href="https://kick.com/jiyay" class="button" style="top: 75%; left: 20%;">Kick</a>
+  <a href="http://youtube.com/jiyay" class="button" style="top: 80%; left: 20%;">YouTube</a>
 
-  <script>
-    const canvas = document.getElementById('background');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  <!-- Right Column Buttons -->
+  <a href="https://www.amazon.com/hz/wishlist/ls/9KYEOINOQDQI?ref_=wl_dp_view_your_list" class="button" style="top: 65%; left: 60%;">Amazon Wishlist</a>
+  <a href="https://discord.com/invite/qHJpEfQzCQ" class="button" style="top: 70%; left: 60%;">Discord</a>
+  <a href="https://www.paypal.com/paypalme/aweco" class="button" style="top: 75%; left: 60%;">PayPal</a>
+  <a href="https://ko-fi.com/jiyay" class="button" style="top: 80%; left: 60%;">Ko-fi</a>
 
-    const particles = Array.from({length: 100}, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 2 + 1,
-      dx: (Math.random() - 0.5) * 0.3,
-      dy: (Math.random() - 0.5) * 0.3,
-      color: `hsl(${Math.random() * 360}, 100%, 60%)`
-    }));
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        ctx.fillStyle = p.color;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      });
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
 </body>
 </html>
